@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "Affiliate Backend with Typescript",
   "main": "server.js",
-  "repository": "https://github.com/melodydev0521/affiliate-backend-ts.git",
+  "repository": "",
   "author": "melody",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "ts-node-dev ./server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node ./dist/server.js"
   },
   "dependencies": {
     "axios": "^1.4.0",
