@@ -35,19 +35,15 @@ app.use("/", (req, res) => res.json("working server!"));
 app.use("/api/gpt", (req, res) => {
 	const { history } = req.body;
 	let baseText = "";
-	fs.readFile(
-		`${rootDir}/app/uploads/jesus23.txt`,
-		"utf8",
-		async (err, data) => {
-			if (err) {
-				console.log(err);
-				return;
-			}
-			baseText = data;
-			let gpt_result = await callGPT(baseText, history);
-			return res.json(gpt_result);
+	fs.readFile(`${rootDir}/uploads/jesus23.txt`, "utf8", async (err, data) => {
+		if (err) {
+			console.log(err);
+			return;
 		}
-	);
+		baseText = data;
+		let gpt_result = await callGPT(baseText, history);
+		return res.json(gpt_result);
+	});
 });
 
 // io.on("connection", (socket) => {
